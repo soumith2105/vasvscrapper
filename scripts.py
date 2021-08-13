@@ -1,9 +1,9 @@
-import os
 import subprocess
 
 
 def lint():
-    os.system("black . && flake8")
+    subprocess.run(["black", "."])
+    subprocess.run(["flake8"])
 
 
 def test():
@@ -11,4 +11,4 @@ def test():
 
 
 def release():
-    subprocess.call("./release.sh", shell=True)
+    subprocess.run("./release.sh", shell=True, stdin=subprocess.PIPE)
