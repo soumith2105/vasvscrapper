@@ -1,4 +1,5 @@
 import os
+import subprocess
 
 
 def lint():
@@ -6,8 +7,8 @@ def lint():
 
 
 def test():
-    os.system("pytest")
+    subprocess.call("pytest")
 
 
 def release():
-    os.system("./release.sh")
+    subprocess.call("./release.sh", shell=True)
