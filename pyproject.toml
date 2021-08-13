@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "vasvscrapper"
 version = "0.0.2-alpha.3"
-description = ""
+description = "A python package for the-vasv-deets project to extract information from vce.ac.in."
 authors = ["P. Soumith Reddy <soumithreddypodduturi@gmail.com>"]
 
 [tool.poetry.dependencies]
@@ -9,6 +9,7 @@ python = "^3.9"
 aiohttp = "^3.7.4"
 bs4 = "^0.0.1"
 lxml = "^4.6.3"
+pre-commit = "^2.14.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
@@ -28,3 +29,8 @@ extend-exclude = '''
 ^/package.json
 ^/runserver.sh
 '''
+
+[tool.poetry.scripts]
+lint = 'scripts:lint'
+test = 'scripts:test'
+release = 'scripts:release'
