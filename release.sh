@@ -7,9 +7,8 @@ echo "__version__ = \"$VERSION\"" > vasvscrapper/__init__.py
 
 git add .
 git commit -m "Version upgraded to v$VERSION"
-git push origin main
 
-if [[ "$(poetry version -s)" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]];
+if [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]
 then
   echo "Released version $VERSION"
   git tag -a "v$VERSION" -m "Released version v$VERSION"
@@ -18,4 +17,5 @@ else
   git tag -a "v$VERSION" -m "Released prerelease version v$VERSION"
 fi
 
-git push origin --tags
+git push origin main
+git push origin "v$VERSION"
