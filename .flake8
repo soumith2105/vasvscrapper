@@ -1,0 +1,26 @@
+[flake8]
+ignore =
+    D203,
+    E501,
+    C901,
+    F541,
+    W503,
+    E203
+
+warn =
+     F841
+
+exclude =
+    .git,
+    __pycache__,
+    .venv,
+    venv,
+    node_modules,
+    package.json,
+    runserver.sh,
+    yarn.lock,
+    LICENSE,
+    .gitignore,
+    db.sqlite3
+
+max-complexity = 10
