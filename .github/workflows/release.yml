@@ -2,8 +2,6 @@ name: Release
 
 on:
   push:
-    branches:
-    - "!*"
     tags:
     - "v*.*.*"
 
@@ -33,14 +31,10 @@ jobs:
         run: poetry build
 
       - name: Check Version
+        id: version
         run: |
-          if [[ "$(poetry version -s)" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]
-          then
-            echo "::set-output name=prerelease::false"
-          else
-            echo "::set-output name=prerelease::true"
-          fi
-        id: check-version
+          [[ "$(poetry version --short)" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] \
+            || echo ::set-output name=prerelease::true
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
@@ -48,7 +42,7 @@ jobs:
         with:
           files: "dist/*"
           draft: false
-          prerelease: steps.check-version.outputs.prerelease == 'true'
+          prerelease: steps.version.outputs.prerelease == 'true'
 
       - name: Publish to PyPI
         env:

@@ -1,8 +1,19 @@
 [tool.poetry]
 name = "vasvscrapper"
-version = "0.0.2-alpha.5"
+version = "0.0.2-alpha.6"
 description = "A python package for the-vasv-deets project to extract information from vce.ac.in."
+readme = "README.md"
 authors = ["P. Soumith Reddy <soumithreddypodduturi@gmail.com>"]
+
+homepage = "https://pypi.org/project/vasvscrapper/"
+repository = "https://github.com/soumith2105/vasvscrapper/"
+
+keywords = ["webscraping", "vasavi"]
+
+classifiers = [
+    "Topic :: Software Development :: Web Scraping",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
 
 [tool.poetry.dependencies]
 python = "^3.9"
@@ -31,6 +42,6 @@ extend-exclude = '''
 '''
 
 [tool.poetry.scripts]
-lint = 'scripts:lint'
-test = 'scripts:test'
-release = 'scripts:release'
+lint = 'vasvscrapper.scripts:lint'
+test = 'vasvscrapper.scripts:test'
+release = 'vasvscrapper.scripts:release'
