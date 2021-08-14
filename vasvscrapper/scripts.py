@@ -21,19 +21,18 @@ def release(args=None):
     with open("vasvscrapper/__init__.py", "w") as f:
         f.write(f'__version__ = "{version}"\n')
 
-    tag = f"v{version}"
     subprocess.run(["git", "add", "."])
-    message = f"Version upgraded to {tag}"
+    message = f"Version upgraded to {version}"
     subprocess.run(["git", "commit", "-m", message])
     subprocess.run(["git", "push", "origin", "main"])
 
     if re.match(r"^[0-9]+\.[0-9]+\.[0-9]+$", version):
-        message = f"Released version {tag}"
+        message = f"Released version {version}"
         print(message)
 
     else:
-        message = f"Released prerelease version {tag}"
+        message = f"Released prerelease version {version}"
         print(message)
 
-    subprocess.run(["git", "tag", "-a", tag, "-m", message])
-    subprocess.run(["git", "push", "origin", tag])
+    subprocess.run(["git", "tag", "-a", version, "-m", message])
+    subprocess.run(["git", "push", "origin", version])

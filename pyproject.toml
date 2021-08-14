@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "vasvscrapper"
-version = "0.0.2-alpha.6"
+version = "0.0.2-alpha.7"
 description = "A python package for the-vasv-deets project to extract information from vce.ac.in."
 readme = "README.md"
 authors = ["P. Soumith Reddy <soumithreddypodduturi@gmail.com>"]
@@ -11,7 +11,7 @@ repository = "https://github.com/soumith2105/vasvscrapper/"
 keywords = ["webscraping", "vasavi"]
 
 classifiers = [
-    "Topic :: Software Development :: Web Scraping",
+    "Programming Language :: Python :: 3.9",
     "Topic :: Software Development :: Libraries :: Python Modules"
 ]
 
