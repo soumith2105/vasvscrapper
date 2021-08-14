@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "vasvscrapper"
-version = "0.0.2-alpha.8"
+version = "0.0.2-alpha.9"
 description = "A python package for the-vasv-deets project to extract information from vce.ac.in."
 readme = "README.md"
 authors = ["P. Soumith Reddy <soumithreddypodduturi@gmail.com>"]
